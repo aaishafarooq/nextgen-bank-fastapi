@@ -1,10 +1,15 @@
 from fastapi import FastAPI
-
+from .api.main import api_router
+from .core.config import settings
 
 app = FastAPI(
-    title=" NextGen Bank - FastAPI",
-    description="Fully features banking api built with fastapi ",
+    title=settings.PROJECT_NAME,
+    description=settings.PROJECT_DESCRIPTION,
+    docs_url=f"{settings.API_V1_STR}/docs",
+    redoc_url=f"{settings.API_V1_STR}/redoc",
+    openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    
 )
-@app.get("/")
-def home():
-    return{"message":"welcome to the nextgen bank api"}
+
+app.include_router(api_router, prefix=settings.API_V1_STR)
+
