@@ -35,6 +35,7 @@ services:
       - "traefik.http.routers.api.entrypoints=web"
       - "traefik.http.routers.api.rule=Host(`api.localhost`)"
       - "traefik.http.routers.api.service=api-service"
+      - "traefik.http.services.api-service.loadbalancer.server.port=8000"
   mailpit:
     image: docker.io/axllent/mailpit:v1.20.3
     ports:
