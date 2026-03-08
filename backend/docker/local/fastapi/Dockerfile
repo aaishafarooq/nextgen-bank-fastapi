@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.10.12
+ARG PYTHON_VERSION=3.11
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS python
 
