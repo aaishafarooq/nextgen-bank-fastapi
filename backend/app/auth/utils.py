@@ -73,7 +73,7 @@ def set_auth_cookies(
     cookie_settings = {
         "path": settings.COOKIE_PATH,
         "secure": settings.COOKIE_SECURE,
-        "httonly": settings.COOKIE_HTTP_ONLY,
+        "httponly": settings.COOKIE_HTTP_ONLY,
         "samesite": settings.COOKIE_SAMESITE,
     }
     access_cookie_settings = cookie_settings.copy()
