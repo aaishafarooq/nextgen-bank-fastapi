@@ -22,6 +22,12 @@ fastapi-mail = "==1.4.2"
 aiosmtplib = "==3.0.2"
 email-validator = "==2.2.0"
 pyjwt = "==2.10.1"
+cloudinary = "==1.39.1"
+python-multipart = "==0.0.20"
+pydantic-extra-types = "==2.10.2"
+pycountry = "==24.6.1"
+phonenumbers = "==8.13.53"
+pillow = "==11.1.0"
 
 [dev-packages]
 
