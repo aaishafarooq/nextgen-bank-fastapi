@@ -10,7 +10,7 @@ from backend.app.core.celery_app import celery_app
 from backend.app.core.db import get_session
 from backend.app.core.logging import get_logger
 from backend.app.core.utils.image import validate_image
-from backend.app.user_profile.schema import ImageTypeSchema
+from backend.app.user_profile.enums import ImageTypeSchema
 
 router = APIRouter(prefix="/profile")
 

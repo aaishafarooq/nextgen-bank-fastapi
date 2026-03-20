@@ -9,11 +9,12 @@ from backend.app.core.tasks.image_upload import upload_profile_image_task
 from backend.app.user_profile.models import Profile
 from backend.app.auth.models import User
 from backend.app.user_profile.schema import (
-    ImageTypeSchema,
     ProfileCreateSchema,
     ProfileUpdateSchema,
     RoleChoicesSchema
 )
+from backend.app.user_profile.enums import ImageTypeSchema
+
 logger = get_logger()
 
 
