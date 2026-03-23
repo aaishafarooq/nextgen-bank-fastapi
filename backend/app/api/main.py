@@ -8,6 +8,7 @@ from backend.app.api.routes.auth import (
     refresh,
     register,
 )
+from backend.app.api.routes.next_of_kin import all
 from backend.app.api.routes.next_of_kin import create as create_next_of_kin
 from backend.app.api.routes.profile import create, all_profiles, update, upload, me
 
@@ -26,3 +27,4 @@ api_router.include_router(upload.router)
 api_router.include_router(me.router)
 api_router.include_router(all_profiles.router)
 api_router.include_router(create_next_of_kin.router)
+api_router.include_router(all.router)
