@@ -40,7 +40,7 @@ class BankAccount(BankAccountBaseSchema, table=True):
         default=None,
         sa_column=Column(
             pg.TIMESTAMP(timezone=True),
-            nullable=False,
+            nullable=True,
         ),
     )
 
