@@ -10,6 +10,7 @@ from backend.app.api.routes.auth import (
 )
 from backend.app.api.routes.next_of_kin import all
 from backend.app.api.routes.next_of_kin import create as create_next_of_kin
+from backend.app.api.routes.next_of_kin import delete
 from backend.app.api.routes.next_of_kin import update as update_next_of_kin
 from backend.app.api.routes.profile import create, all_profiles, update, upload, me
 
@@ -30,3 +31,4 @@ api_router.include_router(all_profiles.router)
 api_router.include_router(create_next_of_kin.router)
 api_router.include_router(all.router)
 api_router.include_router(update_next_of_kin.router)
+api_router.include_router(delete.router)
