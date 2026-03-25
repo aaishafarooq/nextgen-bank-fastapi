@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from sqlalchemy import func, text
 from sqlalchemy.dialects import postgresql as pg
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlmodel import Column, Field, Relationship
+from sqlmodel import Column, Field, Relationship, SQLModel
 
 from backend.app.transaction.schema import TransactionBaseSchema
 
@@ -79,4 +79,33 @@ class Transaction(TransactionBaseSchema, table=True):
     processor: "User" = Relationship(
         back_populates="processed_transactions",
         sa_relationship_kwargs={"foreign_keys": "Transaction.processed_by"},
+    )
+
+
+class IdempotencyKey(SQLModel, table=True):
+    id: uuid.UUID = Field(
+        sa_column=Column(
+            pg.UUID(as_uuid=True),
+            primary_key=True,
+        ),
+        default_factory=uuid.uuid4,
+    )
+    key: str = Field(index=True, unique=True)
+    user_id: uuid.UUID = Field(foreign_key="user.id")
+    endpoint: str
+    response_code: int
+    response_body: dict = Field(sa_column=Column(JSONB))
+    created_at: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc),
+        sa_column=Column(
+            pg.TIMESTAMP(timezone=True),
+            nullable=False,
+            server_default=text("CURRENT_TIMESTAMP"),
+        ),
+    )
+    expires_at: datetime = Field(
+        sa_column=Column(
+            pg.TIMESTAMP(timezone=True),
+            nullable=False,
+        ),
     )

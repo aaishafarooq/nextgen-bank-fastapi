@@ -23,3 +23,15 @@ class TransactionStatusEnum(str, Enum):
 class TransactionCategoryEnum(str, Enum):
     Credit = "credit"
     Debit = "debit"
+
+class TransactionFailureReason(str, Enum):
+    INSUFFICIENT_BALANCE = "insufficient_balance"
+    INVALID_OTP = "invalid_otp"
+    OTP_EXPIRED = "otp_expired"
+    CURRENCY_CONVERSION_FAILED = "currency_conversion_failed"
+    ACCOUNT_INACTIVE = "account_inactive"
+    SYSTEM_ERROR = "system_error"
+    INVALID_AMOUNT = "invalid_amount"
+    INVALID_ACCOUNT = "invalid_account"
+    SELF_TRANSFER = "self_transfer"
+    SUSPICIOUS_ACTIVITY = "suspicious_activity"    
