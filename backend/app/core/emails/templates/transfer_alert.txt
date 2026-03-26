@@ -19,8 +19,8 @@ Dear {{ user_name }}
    Conversion Fee:  {{ from_currency }} {{ conversion_fee }} 
     {% endif %}
 
-   Recipient:  {{ conterparty_name }}
-    Recipient Account: {{ conterparty_account }}
+   Recipient:  {{ counterparty_name }}
+    Recipient Account: {{ counterparty_account }}
 
     {% else %}
     Amount Received:  {{ to_currency }} {{amount}}

@@ -25,8 +25,8 @@
     <li style="margin: 10px 0;"><strong> Conversion Fee: </strong> {{ from_currency }} {{ conversion_fee }} </li>
     {% endif %}
 
-    <li style="margin: 10px 0;"><strong> Recipient: </strong> {{ conterparty_name }}</li>
-    <li style="margin: 10px 0;"><strong> Recipient Account: </strong> {{ conterparty_account }}</li>
+    <li style="margin: 10px 0;"><strong> Recipient: </strong> {{ counterparty_name }}</li>
+    <li style="margin: 10px 0;"><strong> Recipient Account: </strong> {{ counterparty_account }}</li>
 
     {% else %}
     <li style="margin: 10px 0;"><strong> Amount Received: </strong> {{ to_currency }} {{amount}}</li>
@@ -34,7 +34,7 @@
     {% if conversion_applied %}
     <li style="margin: 10px 0;"><strong> Original Amount: </strong> {{ from_currency }} {{ amount }}</li>
     <li style="margin: 10px 0;"><strong> Exchange Rate: </strong> 1 {{ from_currency }} = {{ exchange_rate }}
-      {{to_currency}}</li>
+      {{ to_currency }}</li>
     {% endif %}
     <li style="margin: 10px 0;"><strong> From: </strong> {{ counterparty_name }}</li>
     {% endif %}
