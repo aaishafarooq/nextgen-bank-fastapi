@@ -18,6 +18,7 @@ from backend.app.api.routes.next_of_kin import update as update_next_of_kin
 from backend.app.api.routes.profile import create, all_profiles, update, upload, me
 from backend.app.api.routes.bank_account import (
     deposit,
+    statement,
     transaction_history,
     transfer,
     withdrawal,
@@ -46,3 +47,4 @@ api_router.include_router(deposit.router)
 api_router.include_router(transfer.router)
 api_router.include_router(withdrawal.router)
 api_router.include_router(transaction_history.router)
+api_router.include_router(statement.router)

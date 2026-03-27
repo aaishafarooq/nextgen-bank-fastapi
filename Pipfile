@@ -28,6 +28,7 @@ pydantic-extra-types = "==2.10.2"
 pycountry = "==24.6.1"
 phonenumbers = "==8.13.53"
 pillow = "==11.1.0"
+reportlab = "==4.2.2"
 
 [dev-packages]
 
