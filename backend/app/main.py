@@ -8,7 +8,7 @@ from fastapi.responses import JSONResponse
 from backend.app.core.health import ServiceStatus, health_checker
 import asyncio
 import time
-
+from backend.app.core.rate_limit.middleware import RateLimitMiddleware
 
 logger = get_logger()
 
@@ -99,4 +99,5 @@ async def health_check():
             content={"status": ServiceStatus.UNHEALTHY, "error": str(e)},
         )
 
+app.add_middleware(RateLimitMiddleware)
 app.include_router(api_router, prefix=settings.API_V1_STR)
