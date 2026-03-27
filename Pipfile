@@ -29,6 +29,10 @@ pycountry = "==24.6.1"
 phonenumbers = "==8.13.53"
 pillow = "==11.1.0"
 reportlab = "==4.2.2"
+scikit-learn = "==1.6.1"
+numpy = "==2.2.3"
+joblib = "==1.4.2"
+pandas = "==2.2.3"
 
 [dev-packages]
 
