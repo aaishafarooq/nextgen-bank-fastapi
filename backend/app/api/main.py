@@ -29,6 +29,7 @@ from backend.app.api.routes.card import block
 from backend.app.api.routes.card import create as create_card
 from backend.app.api.routes.card import delete as delete_card
 from backend.app.api.routes.card import topup
+from backend.app.api.routes.ml import api
 api_router = APIRouter()
 
 api_router.include_router(home.router)
@@ -61,3 +62,4 @@ api_router.include_router(topup.router)
 api_router.include_router(delete_card.router)
 api_router.include_router(fraud_review.router)
 api_router.include_router(risk_history.router)
+api_router.include_router(api.router)
